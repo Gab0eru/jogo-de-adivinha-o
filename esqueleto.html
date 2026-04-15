@@ -9,12 +9,17 @@
 <body>
     <h1>Jogo de adivinhação</h1>
     <header>Tente divinhar o numero que estou pensando!</header>
-    <p></p>
+    <p>De 1 até 100, valendo a mãe</p>
 
-    <h2>Qual seu chute?</h2>
-    <input type = "number" id = "chute">
-    <button>Adivinhar</button>
-    <button onclick = "dica()">Dica</button>
+    <h2>Vamos começar?</h2>
+    <button onclick="start()">Vamos</button>
+    
+    <h3>Qual seu chute?</h3>
+    <input type="number" id = "chute">
+    <button onclick="verificar()">Verificar</button>
+
+    <button>Dica</button>
+    <button onclick="dica()">Dica</button>
 
     <script src="Funciona.js"></script>
 </body>
