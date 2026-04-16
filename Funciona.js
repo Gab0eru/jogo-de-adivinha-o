@@ -4,7 +4,18 @@ function start(){
 }
 //
 function verficar(){
-    if( numEscolhido == chute){
-        
+    if(chute < 1 || chute > 100){
+        resultado.textContent = "Qual parte de entre 1 até 100 você não entendeu1!?"
+        return;
     }
+
+    else if( numEscolhido == chute){
+        resultado.textContent = "Na mosca!";
+    }
+
+    else if(numEscolhido != chute){
+        resultado.textContent = "tente de novo";
+    }
+
+    DocumentTimeline.getElementById("numEscolhido").innerHTML = " "; + numEscolhido.toFixed(1);
 }
