@@ -1,21 +1,36 @@
 //Inicio do jogo
-function start(){
-    let numEscolhido = Math.floor(Math.random() * 100) + 1;
+    let gerado;
+function gerar(){
+    let gerado = Math.floor(Math.random() * 100) + 1;
+    console.log ("numero gerado:", gerado);
+    let Pronto = document.getElementById("Pronto").innerHTML = "Pronto";
 }
-//
-function verficar(){
-    if(chute < 1 || chute > 100){
-        resultado.textContent = "Qual parte de entre 1 até 100 você não entendeu1!?"
+//gameplay
+function verificar() {
+    let chute = Number(document.getElementById("chute").value);
+    let resultado = document.getElementById("resultado");
+
+
+    if( chute < 1 || chute > 100 ){
+        resultado.textContent = "entre 1 até 100..."
+        return;
+    }
+    
+    else if(chute === undefined){
+        resultado.textContent = "clique em 'Vamos!' primeiro"
         return;
     }
 
-    else if( numEscolhido == chute){
-        resultado.textContent = "Na mosca!";
+    else if(chute === gerado){
+        resultado.textContent = "Excelente! você é um telepata?"
     }
 
-    else if(numEscolhido != chute){
-        resultado.textContent = "tente de novo";
+    else if( chute < gerado ){
+        resultado.textContent = "ta com pena de chutar? tenta mais alto meu bom!";
     }
 
-    DocumentTimeline.getElementById("numEscolhido").innerHTML = " "; + numEscolhido.toFixed(1);
+    else if( chute > gerado ){
+        resultado.textContent = "chuta mais baixo meu nengue...";
+    }
+//saida
 }
