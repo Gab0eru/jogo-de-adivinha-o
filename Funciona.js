@@ -1,13 +1,21 @@
 //Inicio do jogo
 let gerado = Math.floor(Math.random() * 100) + 1;
+let tentativas = 0
+let maxTentativas = 10
 function gerar(){
     let Pronto = document.getElementById("Pronto").innerHTML = "Ok então, qual numero eu estou pensando?";
-
+    console.log ("escolhi o numero:" + gerado);
+    tentativas = 0;
+}
+//reset
+function reset(){
+    location.reload();
 }
 //gameplay
 function comparar(){
     let chute = Number(document.getElementById("chute").value);
     let resultado = document.getElementById("resultado");
+    tentativas ++;
 
     if( chute < 1 || chute > 100 ){
         let resultado = document.getElementById("resultado").innerHTML = "Um numero entre 1 e 100...";
@@ -21,11 +29,15 @@ function comparar(){
         let resultado = document.getElementById("resultado").innerHTML = "Na mosca! você é um telepata?";
     }
 
+    else if(tentativas === maxTentativas){
+        let resultado = document.getElementById("resultado").innerHTML = "Você não tem mais tentativas, o numero era: " + gerado;
+    }
+
     else if( chute < gerado ){
-        let resultado = document.getElementById("resultado").innerHTML = "ta com pena de chutar? tenta mais alto!";
+        let resultado = document.getElementById("resultado").innerHTML = "ta com pena de chutar? tenta mais alto! você ainda tem" + tentativas;
     }
 
     else if( chute > gerado ){
-        let resultado = document.getElementById("resultado").innerHTML = "ei ei, chuta mais baixo...";
+        let resultado = document.getElementById("resultado").innerHTML = "ei ei, chuta mais baixo..." + tentativas;
     }
 }
