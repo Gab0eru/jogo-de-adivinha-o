@@ -1,36 +1,31 @@
 //Inicio do jogo
-    let gerado;
+let gerado = Math.floor(Math.random() * 100) + 1;
 function gerar(){
-    let gerado = Math.floor(Math.random() * 100) + 1;
-    console.log ("numero gerado:", gerado);
-    let Pronto = document.getElementById("Pronto").innerHTML = "Pronto";
+    let Pronto = document.getElementById("Pronto").innerHTML = "Ok então, qual numero eu estou pensando?";
+
 }
 //gameplay
-function verificar() {
+function comparar(){
     let chute = Number(document.getElementById("chute").value);
     let resultado = document.getElementById("resultado");
 
-
     if( chute < 1 || chute > 100 ){
-        resultado.textContent = "entre 1 até 100..."
-        return;
+        let resultado = document.getElementById("resultado").innerHTML = "Um numero entre 1 e 100...";
     }
     
-    else if(chute === undefined){
-        resultado.textContent = "clique em 'Vamos!' primeiro"
-        return;
+    else if(gerado === undefined){
+        let resultado = document.getElementById("resultado").innerHTML = "você não pode chutar nada";    
     }
 
     else if(chute === gerado){
-        resultado.textContent = "Excelente! você é um telepata?"
+        let resultado = document.getElementById("resultado").innerHTML = "Na mosca! você é um telepata?";
     }
 
     else if( chute < gerado ){
-        resultado.textContent = "ta com pena de chutar? tenta mais alto meu bom!";
+        let resultado = document.getElementById("resultado").innerHTML = "ta com pena de chutar? tenta mais alto!";
     }
 
     else if( chute > gerado ){
-        resultado.textContent = "chuta mais baixo meu nengue...";
+        let resultado = document.getElementById("resultado").innerHTML = "ei ei, chuta mais baixo...";
     }
-//saida
 }
