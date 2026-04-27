@@ -1,0 +1,27 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+section{
+    margin-left: 450px;
+    margin-right: 460px;
+    margin-top: 150px;
+    border-radius: 20px;
+    box-shadow: rgb(34, 114, 31);
+    text-align: center;
+    background-color: rgb(26, 25, 25);
+    color: rgb(35, 160, 35);
+
+}
+h1 header p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+body{
+    background-color: rgb(34, 33, 33);
+}
+button hover{
+    border: rgb(34, 114, 31);
+    background: rgb(34, 33, 33);
+    color: rgb(34, 114, 31);
+}

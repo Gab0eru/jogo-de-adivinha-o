@@ -16,7 +16,10 @@ function comparar(){
     let chute = Number(document.getElementById("chute").value);
     let resultado = document.getElementById("resultado");
     tentativas ++;
-
+    //numero de tentativas
+    let restantes = maxTentativas - tentativas;
+    document.getElementById("tentRestantes").textContent = "Tentativas restantes: " + restantes;
+    //comparação
     if( chute < 1 || chute > 100 ){
         let resultado = document.getElementById("resultado").innerHTML = "Um numero entre 1 e 100...";
     }
@@ -34,10 +37,10 @@ function comparar(){
     }
 
     else if( chute < gerado ){
-        let resultado = document.getElementById("resultado").innerHTML = "ta com pena de chutar? tenta mais alto! você ainda tem" + tentativas;
+        let resultado = document.getElementById("resultado").innerHTML = "ta com pena de chutar? tenta mais alto! você ainda tem";
     }
 
     else if( chute > gerado ){
-        let resultado = document.getElementById("resultado").innerHTML = "ei ei, chuta mais baixo..." + tentativas;
+        let resultado = document.getElementById("resultado").innerHTML = "ei ei, chuta mais baixo...";
     }
 }
